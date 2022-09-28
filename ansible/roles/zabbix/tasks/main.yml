@@ -1,0 +1,56 @@
+- name: Ping para criar FACTS
+  ping:
+  register: resultado
+
+- name: Mostra resultado do ping
+  debug:
+    msg: "{{  resultado }}"
+    
+- name: Install git Debian
+  apt:
+    name: git
+    state: present
+    update_cache: yes
+  when: 
+    - resultado.failed == False
+    - ansible_facts['os_family'] == 'Debian'
+
+- name: Install git Centos
+  ansible.builtin.yum:
+    name: git
+    state: present
+  when: 
+    - resultado.failed == False
+    - ansible_facts['pkg_mgr'] == "yum" and ansible_facts['lsb']['major_release'] | int <= 7
+
+
+- name: Desativar SSL Git SEATI
+  command: git config --global http.sslVerify false
+  when: resultado.failed == False
+
+
+- name: Clonando repositorio git Anderson Serra
+  ansible.builtin.git:
+    repo: https://andersonserra@gitlab.seati.ma.gov.br/andersonserra/kb-infra-001-datacenter-monitor.git
+    dest: /tmp/monitor/
+    single_branch: yes
+    version: master
+  when: resultado.failed == False
+
+
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: /tmp/monitor/install-zabbix.sh
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Instalando agent zabbix
+  command: /tmp/monitor/install-zabbix.sh
+  when: resultado.failed == False
+
+
+- name: deletar script
+  command: rm -rf /tmp/monitor
+  when: resultado.failed == False
+

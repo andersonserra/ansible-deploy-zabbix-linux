@@ -1,0 +1,10 @@
+---
+- name: Playbook instalação de agente zabbix via repositório remoto
+  hosts: servers
+  ignore_unreachable: True
+  ignore_errors: True
+  gather_facts: False
+
+  roles:
+  - zabbix
+
