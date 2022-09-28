@@ -24,11 +24,6 @@
     - ansible_facts['pkg_mgr'] == "yum" and ansible_facts['lsb']['major_release'] | int <= 7
 
 
-- name: Desativar SSL Git SEATI
-  command: git config --global http.sslVerify false
-  when: resultado.failed == False
-
-
 - name: Clonando repositorio git Anderson Serra
   ansible.builtin.git:
     repo: https://github.com/andersonserra/ansible-deploy-zabbix-linux.git
