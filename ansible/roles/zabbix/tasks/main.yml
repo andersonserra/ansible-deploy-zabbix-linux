@@ -27,7 +27,7 @@
 - name: Clonando repositorio git Anderson Serra
   ansible.builtin.git:
     repo: https://github.com/andersonserra/ansible-deploy-zabbix-linux.git
-    dest: /tmp/monitora-main/
+    dest: /tmp/monitor/
     single_branch: yes
     version: master
   when: resultado.failed == False
@@ -35,17 +35,17 @@
 
 - name: Change file ownership, group and permissions
   ansible.builtin.file:
-    path: /tmp/monitor-main/install-zabbix.sh
+    path: /tmp/monitor/install-zabbix.sh
     owner: root
     group: root
     mode: '0755'
 
 - name: Instalando agent zabbix
-  command: /tmp/monitor-main/install-zabbix.sh
+  command: /tmp/monitor/install-zabbix.sh
   when: resultado.failed == False
 
 
 - name: deletar script
-  command: rm -rf /tmp/monitor
+  command: rm -rf /tmp/monitor/
   when: resultado.failed == False
 
