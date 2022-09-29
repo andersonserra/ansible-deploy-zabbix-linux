@@ -585,7 +585,7 @@ yes)
     dpkg -i zabbix-release_6.0-4+ubuntu20.04_all.deb
     apt update
     wait
-    apt install zabbix-agent2 zabbix-agent2-plugin-mongodb
+    apt install -y zabbix-agent2 zabbix-agent2-plugin-mongodb
     wait
     cp /etc/zabbix/zabbix_agent2.conf /etc/zabbix/zabbix_agent2.conf.bkp
     echo "PidFile=/var/run/zabbix/zabbix_agent2.pid
