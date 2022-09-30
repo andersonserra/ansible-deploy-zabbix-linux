@@ -1,7 +1,7 @@
 #!/bin/bash
 
 . /etc/os-release
-. /tmp/monitor/src/functions
+. src/functions
 
 #
 
