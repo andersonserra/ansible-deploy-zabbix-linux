@@ -47,7 +47,7 @@ no)
     wait
     yum clean all
     wait
-    yum install zabbix-agent
+    yum install -y zabbix-agent
     wait
     service zabbix-agent restart
     wait
