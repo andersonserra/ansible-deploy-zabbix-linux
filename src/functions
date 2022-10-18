@@ -310,7 +310,7 @@ no)
     wait
     apt install -y zabbix-agent
     wait
-    cp /etc/zabbix/zabbix_agent.conf /etc/zabbix/zabbix_agent.conf.bkp
+    cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bkp
     echo "PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=50
@@ -321,7 +321,7 @@ Hostname=`hostname`
 StartAgents=8
 Timeout=15
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
-" > /etc/zabbix/zabbix_agent.conf
+" > /etc/zabbix/zabbix_agentd.conf
     wait
     systemctl restart zabbix-agent
     wait
