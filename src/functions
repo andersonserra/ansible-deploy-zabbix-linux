@@ -33,7 +33,7 @@ DebugLevel=3
 AllowKey=system.run[*]
 Server=10.22.8.233,10.22.8.234,10.22.8.235,10.22.8.236,10.22.8.237,10.22.8.238,10.22.8.239,10.22.8.240,10.22.8.241,10.22.8.242
 ListenPort=10050
-Hostname=`hostnamectl`
+Hostname=`hostname`
 Timeout=15
 Include=/etc/zabbix/zabbix_agent2.d/*.conf
 ControlSocket=/tmp/agent.sock
@@ -102,7 +102,7 @@ DebugLevel=3
 AllowKey=system.run[*]
 Server=10.22.8.233,10.22.8.234,10.22.8.235,10.22.8.236,10.22.8.237,10.22.8.238,10.22.8.239,10.22.8.240,10.22.8.241,10.22.8.242
 ListenPort=10050
-Hostname=`hostnamectl`
+Hostname=`hostname`
 Timeout=15
 Include=/etc/zabbix/zabbix_agent2.d/*.conf
 ControlSocket=/tmp/agent.sock
@@ -122,7 +122,7 @@ no)
     wait
     systemctl enable zabbix-agent
     wait
-    cp /etc/zabbix/zabbix_agent.conf /etc/zabbix/zabbix_agent.conf.bkp
+    cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bkp
     echo "
 
 PidFile=/var/run/zabbix/zabbix_agentd.pid
@@ -165,7 +165,7 @@ DebugLevel=3
 AllowKey=system.run[*]
 Server=10.22.8.233,10.22.8.234,10.22.8.235,10.22.8.236,10.22.8.237,10.22.8.238,10.22.8.239,10.22.8.240,10.22.8.241,10.22.8.242
 ListenPort=10050
-Hostname=`hostnamectl`
+Hostname=`hostname`
 Timeout=15
 Include=/etc/zabbix/zabbix_agent2.d/*.conf
 ControlSocket=/tmp/agent.sock
@@ -183,7 +183,7 @@ no)
     wait
     dnf install -y zabbix-agent
     wait
-    cp /etc/zabbix/zabbix_agent.conf /etc/zabbix/zabbix_agent.conf.bkp
+    cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bkp
     echo "PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=50
@@ -226,7 +226,7 @@ DebugLevel=3
 AllowKey=system.run[*]
 Server=10.22.8.233,10.22.8.234,10.22.8.235,10.22.8.236,10.22.8.237,10.22.8.238,10.22.8.239,10.22.8.240,10.22.8.241,10.22.8.242
 ListenPort=10050
-Hostname=`hostnamectl`
+Hostname=`hostname`
 Timeout=15
 Include=/etc/zabbix/zabbix_agent2.d/*.conf
 ControlSocket=/tmp/agent.sock
@@ -291,7 +291,7 @@ DebugLevel=3
 AllowKey=system.run[*]
 Server=10.22.8.233,10.22.8.234,10.22.8.235,10.22.8.236,10.22.8.237,10.22.8.238,10.22.8.239,10.22.8.240,10.22.8.241,10.22.8.242
 ListenPort=10050
-Hostname=`hostnamectl`
+Hostname=`hostname`
 Timeout=15
 Include=/etc/zabbix/zabbix_agent2.d/*.conf
 ControlSocket=/tmp/agent.sock
@@ -356,7 +356,7 @@ DebugLevel=3
 AllowKey=system.run[*]
 Server=10.22.8.233,10.22.8.234,10.22.8.235,10.22.8.236,10.22.8.237,10.22.8.238,10.22.8.239,10.22.8.240,10.22.8.241,10.22.8.242
 ListenPort=10050
-Hostname=`hostnamectl`
+Hostname=`hostname`
 Timeout=15
 Include=/etc/zabbix/zabbix_agent2.d/*.conf
 ControlSocket=/tmp/agent.sock
@@ -492,7 +492,7 @@ no)
     apt install -y zabbix-agent
     wait
     wait
-    cp /etc/zabbix/zabbix_agent.conf /etc/zabbix/zabbix_agent.conf.bkp
+    cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bkp
     echo "PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=50
@@ -534,7 +534,7 @@ DebugLevel=3
 AllowKey=system.run[*]
 Server=10.22.8.233,10.22.8.234,10.22.8.235,10.22.8.236,10.22.8.237,10.22.8.238,10.22.8.239,10.22.8.240,10.22.8.241,10.22.8.242
 ListenPort=10050
-Hostname=`hostnamectl`
+Hostname=`hostname`
 Timeout=15
 Include=/etc/zabbix/zabbix_agent2.d/*.conf
 ControlSocket=/tmp/agent.sock
@@ -553,7 +553,7 @@ no)
     apt install -y zabbix-agent
     wait
     wait
-    cp /etc/zabbix/zabbix_agent.conf /etc/zabbix/zabbix_agent.conf.bkp
+    cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bkp
     echo "PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=50
@@ -595,7 +595,7 @@ DebugLevel=3
 AllowKey=system.run[*]
 Server=10.22.8.233,10.22.8.234,10.22.8.235,10.22.8.236,10.22.8.237,10.22.8.238,10.22.8.239,10.22.8.240,10.22.8.241,10.22.8.242
 ListenPort=10050
-Hostname=`hostnamectl`
+Hostname=`hostname`
 Timeout=15
 Include=/etc/zabbix/zabbix_agent2.d/*.conf
 ControlSocket=/tmp/agent.sock
@@ -614,7 +614,7 @@ no)
     apt install -y zabbix-agent
     wait
     wait
-    cp /etc/zabbix/zabbix_agent.conf /etc/zabbix/zabbix_agent.conf.bkp
+    cp /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bkp
     echo "PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=50
@@ -625,7 +625,7 @@ Hostname=`hostname`
 StartAgents=8
 Timeout=15
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
-" > /etc/zabbix/zabbix_agent.conf
+" > /etc/zabbix/zabbix_agentd.conf
     systemctl restart zabbix-agent
     wait
     systemctl enable zabbix-agent
@@ -659,7 +659,7 @@ DebugLevel=3
 AllowKey=system.run[*]
 Server=10.22.8.233,10.22.8.234,10.22.8.235,10.22.8.236,10.22.8.237,10.22.8.238,10.22.8.239,10.22.8.240,10.22.8.241,10.22.8.242
 ListenPort=10050
-Hostname=`hostnamectl`
+Hostname=`hostname`
 Timeout=15
 Include=/etc/zabbix/zabbix_agent2.d/*.conf
 ControlSocket=/tmp/agent.sock
